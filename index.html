@@ -150,13 +150,6 @@
 		.experience-row h3 { margin-bottom: 5px; font: 600 17px var(--display); }
 		.experience-row p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 		.project-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
-		.project-overview { max-width: 700px; margin-bottom: 16px !important; font-size: 15px !important; }
-		.project-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 28px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
-		.project-detail h4 { margin: 0 0 10px; font: 600 14px var(--display); }
-		.project-detail p { margin-bottom: 0; }
-		.project-feature-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; margin: 0; padding: 0; list-style: none; }
-		.project-feature-list li { position: relative; padding-left: 13px; color: var(--muted); font-size: 13px; line-height: 1.55; }
-		.project-feature-list li::before { position: absolute; top: 0.58em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); content: ""; }
 		.certificate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 		.certificate-card { min-width: 0; display: grid; grid-template-rows: 180px auto; overflow: hidden; border: 1px solid var(--line); background: var(--white); color: var(--ink); text-decoration: none; transition: transform 160ms ease; }
 		.certificate-card:hover { transform: translateY(-2px); }
@@ -200,7 +193,6 @@
 			.nav a:nth-child(2) { display: none; }
 			.nav .contact-link { padding: 9px 11px; }
 			.certificate-grid { grid-template-columns: 1fr; }
-			.project-details, .project-feature-list { grid-template-columns: 1fr; }
 			.hero { grid-template-columns: 1fr; gap: 42px; padding: 54px 0 70px; }
 			h1 { font-size: clamp(50px, 12vw, 72px); }
 			.portrait-wrap { width: min(78%, 310px); justify-self: start; }
@@ -267,54 +259,35 @@
 			<div class="shell section-grid">
 					<div class="section-index">02 — Experience</div>
 				<div class="section-content">
-						<h2>Projects, experience &amp; education</h2>
+						<h2>Experience &amp; projects</h2>
 					<div class="experience">
 						<article class="experience-row">
-									<div class="meta">Featured project<br>Full stack</div>
-								<div>
-										<h3>EventHub — Full-Stack Event Management Platform</h3>
-										<p class="project-overview">EventHub helps users discover events, view event details, register, save favourites, and receive digital event tickets.</p>
-										<div class="skills" aria-label="EventHub technologies">
-											<span class="skill">React</span><span class="skill">Tailwind CSS</span><span class="skill">JavaScript</span><span class="skill">Node.js</span><span class="skill">Express.js</span><span class="skill">PostgreSQL</span><span class="skill">GitHub</span><span class="skill">Netlify</span><span class="skill">Render</span>
-										</div>
-										<div class="project-details">
-											<div class="project-detail">
-												<h4>Key features</h4>
-												<ul class="project-feature-list">
-													<li>User registration and login</li><li>Event discovery and details</li><li>Event registration</li><li>Generated digital ticket numbers</li><li>Email confirmations</li><li>Favourite events</li><li>PostgreSQL integration</li><li>Responsive frontend</li>
-												</ul>
-											</div>
-											<div class="project-detail">
-												<h4>What I built</h4>
-												<p>I independently developed the frontend and backend, connected PostgreSQL, created API endpoints for core features, implemented event registration and ticket generation, integrated email confirmations, and deployed the frontend and backend separately.</p>
-											</div>
-											<div class="project-detail">
-												<h4>What I learned</h4>
-												<p>Building EventHub strengthened my understanding of full-stack development, REST APIs, database relationships, authentication, deployment, debugging, and connecting frontend applications to backend services.</p>
-											</div>
-										</div>
-									<div class="project-links">
-										<a class="button" href="https://eventhub-platform.netlify.app/" target="_blank" rel="noreferrer">Live demo ↗</a>
-										<a class="button secondary" href="https://github.com/fagyeiwaa-dev/EventHub-event-management" target="_blank" rel="noreferrer">Source code ↗</a>
-									</div>
-								</div>
+							<div class="meta">Work · Aug 2026 — Present</div>
+							<div><h3>Operations &amp; Client Support Assistant</h3><p>Carpe Accounting Solutions Hub</p></div>
 						</article>
 						<article class="experience-row">
-								<div class="meta">August 2026<br>— Present</div>
-								<div><h3>Carpe Accounting Solutions Hub</h3><p>Operations &amp; Client Support Assistant</p></div>
-							</article>
-							<article class="experience-row">
-								<div class="meta">June — July 2026</div>
-								<div><h3>Tech4Girls — HACSA Foundation</h3><p>Intermediate Backend Development</p></div>
-							</article>
-							<article class="experience-row">
-								<div class="meta">June 2026</div>
-								<div><h3>Women Techsters — Tech4Dev</h3><p>Software Development Bootcamp</p></div>
-							</article>
-							<article class="experience-row">
-								<div class="meta">Education</div>
-								<div><h3>Information Technology · UPSA</h3><p>Currently studying at the University of Professional Studies, Accra.</p></div>
-							</article>
+							<div class="meta">Project</div>
+							<div>
+								<h3>EventHub</h3>
+								<p>Full-stack event platform for discovering events, registering, saving favourites, and receiving digital tickets.</p>
+								<div class="project-links">
+									<a class="button" href="https://eventhub-platform.netlify.app/" target="_blank" rel="noreferrer">Live demo ↗</a>
+									<a class="button secondary" href="https://github.com/fagyeiwaa-dev/EventHub-event-management" target="_blank" rel="noreferrer">Source code ↗</a>
+								</div>
+							</div>
+						</article>
+						<article class="experience-row">
+							<div class="meta">Training · Jun — Jul 2026</div>
+							<div><h3>Intermediate Backend Development</h3><p>Tech4Girls · HACSA Foundation</p></div>
+						</article>
+						<article class="experience-row">
+							<div class="meta">Training · Jun 2026</div>
+							<div><h3>Software Development Bootcamp</h3><p>Women Techsters · Tech4Dev</p></div>
+						</article>
+						<article class="experience-row">
+							<div class="meta">Education</div>
+							<div><h3>Information Technology · UPSA</h3><p>Currently studying at the University of Professional Studies, Accra.</p></div>
+						</article>
 					</div>
 				</div>
 			</div>
