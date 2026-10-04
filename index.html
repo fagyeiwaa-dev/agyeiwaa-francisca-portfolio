@@ -114,15 +114,14 @@
 		.portrait-wrap { position: relative; width: min(100%, 340px); justify-self: end; }
 		.portrait {
 			position: relative;
-			display: grid;
-			place-items: center;
+			display: block;
 			width: 100%;
 			aspect-ratio: 0.86;
 			overflow: hidden;
 			border: 1px solid var(--ink);
 			background: var(--green);
 		}
-		.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; }
+		.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; transform: scale(1.12); transform-origin: 50% 8%; }
 		.photo-caption { position: absolute; right: 0; bottom: -27px; color: var(--muted); }
 
 		.section { border-top: 1px solid var(--line); }
