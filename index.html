@@ -142,6 +142,15 @@
 		.meta { padding-top: 4px; color: var(--muted); line-height: 1.7; }
 		.experience-row h3 { margin-bottom: 5px; font: 600 17px var(--display); }
 		.experience-row p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+		.certificate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+		.certificate-card { min-width: 0; display: grid; grid-template-rows: 180px auto; overflow: hidden; border: 1px solid var(--line); background: var(--white); color: var(--ink); text-decoration: none; transition: transform 160ms ease; }
+		.certificate-card:hover { transform: translateY(-2px); }
+		.certificate-image { display: grid; place-items: center; overflow: hidden; background: #e6e6dd; }
+		.certificate-image img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+		.certificate-info { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; align-content: start; padding: 16px; }
+		.certificate-info h3 { grid-column: 1 / -1; margin: 0; font: 600 17px var(--display); }
+		.certificate-info p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+		.certificate-view { align-self: end; color: var(--ink); font: 11px var(--mono); white-space: nowrap; }
 
 		.skills { display: flex; flex-wrap: wrap; gap: 9px; }
 		.skill { padding: 9px 12px; border: 1px solid var(--line); background: var(--white); font-size: 13px; }
@@ -173,6 +182,7 @@
 			.nav a { font-size: 12px; }
 			.nav a:nth-child(2) { display: none; }
 			.nav .contact-link { padding: 9px 11px; }
+			.certificate-grid { grid-template-columns: 1fr; }
 			.hero { grid-template-columns: 1fr; gap: 42px; padding: 54px 0 70px; }
 			h1 { font-size: clamp(50px, 12vw, 72px); }
 			.portrait-wrap { width: min(78%, 310px); justify-self: start; }
@@ -267,15 +277,15 @@
 				<div class="section-index">03 — Certificates</div>
 				<div class="section-content">
 					<h2>Certificates &amp; training</h2>
-					<div class="experience">
-						<article class="experience-row">
-							<div class="meta">Certificate</div>
-							<div><h3>Tech4Girls</h3><p>Technology training</p></div>
-						</article>
-						<article class="experience-row">
-							<div class="meta">Certificate</div>
-							<div><h3>Women Techsters Bootcamp</h3><p>Technology bootcamp</p></div>
-						</article>
+					<div class="certificate-grid">
+						<a class="certificate-card" href="d3a05019-77bb-4787-b08d-2a8518b80d78.jpg" target="_blank" rel="noreferrer" aria-label="Open Tech4Girls certificate in a new tab">
+							<div class="certificate-image"><img src="d3a05019-77bb-4787-b08d-2a8518b80d78.jpg" alt="Tech4Girls certificate for backend web development and leadership skills"></div>
+							<div class="certificate-info"><h3>Tech4Girls</h3><p>HACSA · 12-week intermediate Backend Web Development and leadership programme</p><span class="certificate-view">View certificate ↗</span></div>
+						</a>
+						<a class="certificate-card" href="IMG_3645.PNG" target="_blank" rel="noreferrer" aria-label="Open Women Techsters Bootcamp certificate in a new tab">
+							<div class="certificate-image"><img src="IMG_3645.PNG" alt="Women Techsters Cohort 5.1 Software Development Bootcamp certificate, completed August 31, 2026"></div>
+							<div class="certificate-info"><h3>Women Techsters Bootcamp</h3><p>Software Development · Cohort 5.1 · Completed August 31, 2026</p><span class="certificate-view">View certificate ↗</span></div>
+						</a>
 					</div>
 				</div>
 			</div>
