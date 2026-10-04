@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f3f1e8">
+	<meta name="description" content="Portfolio of Agyeiwaa Francisca, IT student and software developer.">
+	<title>Agyeiwaa Francisca — Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--paper: #f3f1e8;
+			--ink: #202720;
+			--muted: #657067;
+			--line: #d8d9cc;
+			--green: #c8f169;
+			--orange: #f17c54;
+			--white: #fffef9;
+			--mono: "DM Mono", monospace;
+			--sans: "DM Sans", sans-serif;
+			--display: "Space Grotesk", sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			color: var(--ink);
+			background-color: var(--paper);
+			background-image: radial-gradient(#b6b9aa 0.65px, transparent 0.65px);
+			background-size: 13px 13px;
+			font-family: var(--sans);
+			-webkit-font-smoothing: antialiased;
+		}
+		a { color: inherit; }
+		button, a { -webkit-tap-highlight-color: transparent; }
+		.shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+		.topbar {
+			min-height: 78px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid var(--line);
+		}
+		.wordmark {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			text-decoration: none;
+			font: 700 16px var(--display);
+		}
+		.mark { width: 13px; height: 13px; background: var(--orange); border-radius: 50%; }
+		.nav { display: flex; align-items: center; gap: 30px; }
+		.nav a { text-decoration: none; font-size: 13px; color: var(--muted); }
+		.nav a:hover { color: var(--ink); }
+		.nav .contact-link {
+			color: var(--ink);
+			padding: 10px 15px;
+			border: 1px solid var(--ink);
+			border-radius: 3px;
+		}
+
+		.hero {
+			display: grid;
+			grid-template-columns: 1.25fr 0.75fr;
+			gap: 9%;
+			align-items: center;
+			padding: 74px 0 82px;
+			animation: arrive 650ms ease-out both;
+		}
+		.eyebrow, .section-index, .meta, .photo-caption, .footer-note {
+			font: 11px var(--mono);
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+		}
+		.eyebrow { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+		.availability { width: 8px; height: 8px; background: #648c37; border-radius: 50%; }
+		h1, h2, h3, p { margin-top: 0; }
+		h1 {
+			max-width: 690px;
+			margin: 20px 0 19px;
+			font: 600 clamp(52px, 7.4vw, 88px)/0.98 var(--display);
+			letter-spacing: -0.055em;
+		}
+		h1 span { color: #79846f; }
+		.intro { max-width: 500px; margin-bottom: 28px; color: #515c52; font-size: 17px; line-height: 1.7; }
+		.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; }
+		.hero-links { display: flex; flex-wrap: wrap; gap: 19px; margin-top: 20px; }
+		.hero-links a { color: var(--muted); font-size: 13px; text-underline-offset: 3px; }
+		.button {
+			min-height: 45px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 9px;
+			padding: 0 17px;
+			border: 1px solid var(--ink);
+			border-radius: 3px;
+			background: var(--ink);
+			color: var(--white);
+			text-decoration: none;
+			font: 600 13px var(--sans);
+			cursor: pointer;
+			transition: transform 160ms ease, background 160ms ease;
+		}
+		.button:hover { transform: translateY(-2px); background: #3b493d; }
+		.button.secondary { color: var(--ink); background: transparent; }
+		.button.secondary:hover { background: var(--green); }
+		.button svg { width: 15px; height: 15px; }
+
+		.portrait-wrap { position: relative; width: min(100%, 340px); justify-self: end; }
+		.portrait {
+			position: relative;
+			display: grid;
+			place-items: center;
+			width: 100%;
+			aspect-ratio: 0.86;
+			overflow: hidden;
+			border: 1px solid var(--ink);
+			background: var(--green);
+		}
+		.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; }
+		.photo-caption { position: absolute; right: 0; bottom: -27px; color: var(--muted); }
+
+		.section { border-top: 1px solid var(--line); }
+		.section-grid { display: grid; grid-template-columns: 190px 1fr; gap: 40px; padding: 48px 0 54px; }
+		.section-index { color: var(--muted); padding-top: 8px; }
+		.section-content { min-width: 0; }
+		.section h2 { margin-bottom: 24px; font: 600 32px/1.1 var(--display); letter-spacing: -0.04em; }
+		.about-copy { max-width: 650px; color: #515c52; font-size: 16px; line-height: 1.8; }
+
+		.experience { border-top: 1px solid var(--line); }
+		.experience-row {
+			display: grid;
+			grid-template-columns: minmax(125px, 0.45fr) 1fr;
+			gap: 25px;
+			padding: 20px 0;
+			border-bottom: 1px solid var(--line);
+		}
+		.meta { padding-top: 4px; color: var(--muted); line-height: 1.7; }
+		.experience-row h3 { margin-bottom: 5px; font: 600 17px var(--display); }
+		.experience-row p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+		.skills { display: flex; flex-wrap: wrap; gap: 9px; }
+		.skill { padding: 9px 12px; border: 1px solid var(--line); background: var(--white); font-size: 13px; }
+		.cv-panel {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 22px;
+			padding: 23px;
+			border: 1px solid var(--ink);
+			background: var(--white);
+		}
+		.cv-info { display: flex; align-items: center; gap: 16px; min-width: 0; }
+		.cv-icon { width: 43px; height: 48px; display: grid; place-items: center; flex: 0 0 auto; background: var(--orange); }
+		.cv-icon svg { width: 22px; height: 22px; }
+		.cv-info h3 { margin: 0 0 4px; font: 600 16px var(--display); }
+		.cv-info p { margin: 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+		.cv-panel > .button { flex: 0 0 auto; white-space: nowrap; }
+		.footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0 32px; border-top: 1px solid var(--line); color: var(--muted); }
+		.footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+		.footer-note { font-size: 10px; }
+		.footer a { color: var(--ink); font-size: 13px; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+		@keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+		@media (max-width: 720px) {
+			.shell { width: min(100% - 36px, 560px); }
+			.topbar { min-height: 68px; }
+			.nav { gap: 16px; }
+			.nav a { font-size: 12px; }
+			.nav a:nth-child(2) { display: none; }
+			.nav .contact-link { padding: 9px 11px; }
+			.hero { grid-template-columns: 1fr; gap: 42px; padding: 54px 0 70px; }
+			h1 { font-size: clamp(50px, 12vw, 72px); }
+			.portrait-wrap { width: min(78%, 310px); justify-self: start; }
+			.section-grid { grid-template-columns: 1fr; gap: 18px; padding: 34px 0 40px; }
+			.section-index { padding: 0; }
+			.section h2 { font-size: 28px; margin-bottom: 20px; }
+			.experience-row { grid-template-columns: 1fr; gap: 7px; }
+			.cv-panel { align-items: flex-start; flex-direction: column; }
+			.footer { align-items: flex-start; flex-direction: column; gap: 10px; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+		}
+	</style>
+</head>
+<body>
+	<header class="shell topbar">
+		<a class="wordmark" href="#home" aria-label="Agyeiwaa Francisca, home"><span class="mark" aria-hidden="true"></span>Agyeiwaa Francisca</a>
+		<nav class="nav" aria-label="Main navigation">
+			<a href="#about">About</a>
+			<a href="#experience">Experience</a>
+			<a class="contact-link" href="mailto:fagyeiwaa898@gmail.com">Get in touch</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="shell hero" id="home">
+			<div>
+				<div class="eyebrow"><span class="availability" aria-hidden="true"></span>IT Student · Software Developer</div>
+				<h1>Agyeiwaa<br><span>Francisca.</span></h1>
+				<p class="intro">I’m an IT student and aspiring software developer who enjoys building practical technology and learning by making things. I’m focused on growing my skills and creating solutions that make a difference.</p>
+				<div class="hero-actions">
+					<a class="button" href="#experience">Explore my work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+					<a class="button secondary" href="#cv">View my CV</a>
+				</div>
+				<div class="hero-links">
+					<a href="https://github.com/fagyeiwaa-dev" target="_blank" rel="noreferrer">GitHub ↗</a>
+					<a href="https://www.linkedin.com/in/francisca-agyeiwaa" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+				</div>
+			</div>
+			<div class="portrait-wrap">
+				<div class="portrait">
+					<img src="fbf29b91-e271-4200-8aac-f2e43df190b3_Original.jpg" alt="Portrait of Agyeiwaa Francisca">
+				</div>
+				<span class="photo-caption">01 / A little introduction</span>
+			</div>
+		</section>
+
+		<section class="section" id="about">
+			<div class="shell section-grid">
+				<div class="section-index">01 — About</div>
+				<div class="section-content">
+					<h2>A bit about me</h2>
+					<p class="about-copy">I’m studying Information Technology at the University of Professional Studies, Accra (UPSA), and I’m passionate about software development. I enjoy building practical solutions and growing my skills across frontend and backend development. My experience includes building EventHub, a full-stack event management platform, backend development training, and work in client support and business operations.</p>
+					<div class="skills" aria-label="Skills">
+						<span class="skill">Python</span><span class="skill">JavaScript</span><span class="skill">C++</span><span class="skill">React</span><span class="skill">Node.js</span><span class="skill">Express.js</span><span class="skill">PostgreSQL</span><span class="skill">MySQL</span><span class="skill">Tailwind CSS</span><span class="skill">Git &amp; GitHub</span><span class="skill">REST APIs</span><span class="skill">Postman</span><span class="skill">Ubuntu / Linux</span><span class="skill">Netlify</span><span class="skill">Render</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="experience">
+			<div class="shell section-grid">
+					<div class="section-index">02 — Experience</div>
+				<div class="section-content">
+						<h2>Experience &amp; projects</h2>
+					<div class="experience">
+						<article class="experience-row">
+								<div class="meta">Project</div>
+								<div><h3>EventHub</h3><p>A full-stack event management platform, built as a practical software development project.</p></div>
+						</article>
+						<article class="experience-row">
+								<div class="meta">Education</div>
+								<div><h3>Information Technology · UPSA</h3><p>Currently studying at the University of Professional Studies, Accra.</p></div>
+							</article>
+							<article class="experience-row">
+								<div class="meta">Training</div>
+								<div><h3>Backend development</h3><p>Hands-on training building backend development skills.</p></div>
+							</article>
+							<article class="experience-row">
+								<div class="meta">Experience</div>
+								<div><h3>Client support &amp; business operations</h3><p>Professional experience supporting clients and business operations.</p></div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="cv">
+			<div class="shell section-grid">
+				<div class="section-index">03 — CV</div>
+				<div class="section-content">
+					<h2>My résumé</h2>
+					<div class="cv-panel">
+						<div class="cv-info">
+							<div class="cv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v6h5M9 14h7M9 17h7"/></svg></div>
+							<div><h3>Agyeiwaa Francisca · CV</h3><p>PDF résumé</p></div>
+						</div>
+						<a class="button" href="Agyeiwaa_Francisca_Resume.pdf" download>Download CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="shell footer">
+		<span class="footer-note">© <span id="year"></span> Agyeiwaa Francisca</span>
+		<div class="footer-links">
+			<a href="mailto:fagyeiwaa898@gmail.com">fagyeiwaa898@gmail.com</a>
+			<a href="https://www.linkedin.com/in/francisca-agyeiwaa" target="_blank" rel="noreferrer">LinkedIn</a>
+			<a href="https://github.com/fagyeiwaa-dev" target="_blank" rel="noreferrer">GitHub</a>
+		</div>
+	</footer>
+
+	<script>
+		document.querySelector("#year").textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>
